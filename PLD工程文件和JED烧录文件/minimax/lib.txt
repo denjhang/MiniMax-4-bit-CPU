@@ -1,0 +1,5 @@
+
+ABELLIB ABEL 4.00 Copyright 1983-1990 Data I/O Corp. All Rights Reserved.
+Warning 9013: ? abellib: file 'ABEL4W' not in library.
++ Extracting file 'P16V8S.DEV'
+ABELLIB complete.

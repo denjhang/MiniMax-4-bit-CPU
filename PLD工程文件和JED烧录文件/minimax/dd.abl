@@ -1,0 +1,11 @@
+module DS00
+IO device 'P16V8S';
+ D0 pin 1;
+ Q0 pin 19;
+ CTRL pin 9;
+ input = D0;
+ output = Q0;
+equations 
+ WHEN CTRL == 1 THEN output = input;
+ WHEN CTRL == 0 THEN output = input; 
+end DS00

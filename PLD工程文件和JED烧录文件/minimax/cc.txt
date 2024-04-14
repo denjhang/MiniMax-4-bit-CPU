@@ -1,0 +1,22 @@
+
+FUSEASM    Fusemap Assembler
+ABEL 4.00 Copyright 1990 Data I/O Corp.  All Rights Reserved
+Command Line Error 0161: illegal file name, "D:\Abel4w\Abel4w\abel4\DECODERCMM.tt2", following -i
+Command Line Error 5115: Illegal use of flag(s)
+  Usage: fuseasm [-i] in_file[.tt3] {options}
+  Options:
+  -checksum  none | FULL | dummy
+  -config    ptintact, noturbo, nomiser, lock
+  -device    device_name
+  -document  BRIEF | long, [plcc]
+  -errlog    err_file[]
+  -format    DEFAULT | 82 | 83 | 87 | 88 | hex | brief | full | pof
+  -help
+  -ivector   vector_file[.tmv]
+  -o         load_file[.jed | .p82 | .p83 | .p87 | .p88 | .pof]
+  -report    report_file[.doc]
+  -ues       signature_word
+  -silent
+  -usage
+  -x         0 | 1 
+

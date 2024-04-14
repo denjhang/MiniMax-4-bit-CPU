@@ -1,0 +1,10 @@
+AHDL2PLA  ABEL-HDL Processor
+ABEL 4.00 Copyright 1990 Data I/O Corp.  All Rights Reserved
+
+Module: 'DS00'
+Processing equations...
+Creating sum-of-products on-set matrix...
+Creating ABEL-PLA file ds00.tt1...
+
+AHDL2PLA complete - 0 errors, 0 warnings. Time: 1 seconds
+

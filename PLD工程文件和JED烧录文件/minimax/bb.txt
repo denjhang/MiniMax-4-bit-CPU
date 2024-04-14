@@ -1,0 +1,20 @@
+
+PLAOPT  ABEL PLA Optimizer
+ABEL 4.00 Copyright 1990 Data I/O Corp.  All Rights Reserved
+Command Line Error 0161: illegal file name, "D:\Abel4w\Abel4w\abel4\DECODERCMM.tt1", following -i
+Usage: PLAOPT [-i] input_file[.tt1] [options]
+Options:
+  -errlog err_file
+  -help
+  -o output_file[.tt2]
+  -silent
+  -reduce none | [group|bypin] [fixed|choose] [exact]
+    group  Term sharing optimization (FPLA)
+    bypin  Single output optimization
+    fixed  Polarity determined by 'pos' and 'neg'
+    choose Automatic polarity selection
+    dt     Automatic D or T flip flop selection
+    exact  Exact minimization algorithm
+
+Group Fixed is default for FPLA, Bypin Choose for other PLDs
+Example: PLAOPT file -reduce group choose exact

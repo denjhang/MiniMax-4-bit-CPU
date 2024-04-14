@@ -1,0 +1,175 @@
+
+
+
+                                                                      Page 1
+ABEL 4.00  -  Device Utilization Chart         Sun Aug 20 01:50:34 19<3
+
+
+
+    ==== P16V8S Programmed Logic ====
+
+
+PCLD     = !(  !CMD0 & !CMD1 & CMD2 & CMD3 & !STATUS & ZF 
+           #   CMD1 & CMD2 & CMD3 & !STATUS & !CF 
+           #   CMD0 & CMD2 & CMD3 & !STATUS & CF );
+
+FLGCK     = !(  !MCLK & CMD1 & !CMD2 & !CMD3 & !STATUS 
+           #   !MCLK & CMD0 & !CMD2 & !CMD3 & !STATUS );
+
+ACCLD     = !(  !CMD0 & !CMD1 & !CMD2 & CMD3 & !STATUS 
+           #   CMD1 & !CMD2 & !CMD3 & !STATUS 
+           #   !CMD0 & CMD2 & !CMD3 & !STATUS );
+
+REGWR     = !(  !MCLK & CMD0 & !CMD1 & CMD2 & !CMD3 & !STATUS );
+
+ADDSLD     = !(  CMD0 & !CMD1 & !CMD2 & CMD3 & !STATUS );
+
+OUTLD     = (  !MCLK & CMD0 & CMD1 & CMD2 & !CMD3 & !STATUS );
+
+CC     = (  CMD1 & !CMD2 & !CMD3 & CF 
+           #   CMD0 & !CMD1 & !CMD2 & !CMD3 );
+
+
+
+
+                                                                      Page 2
+ABEL 4.00  -  Device Utilization Chart         Sun Aug 20 01:50:34 19<3
+
+
+
+                 ==== P16V8S Chip Diagram ====
+
+
+
+                            P16V8S
+
+                 +---------\       /---------+
+                 |          \     /          |
+                 |           -----           |
+            MCLK |  1                    20  | Vcc             
+                 |                           |
+            CMD0 |  2                    19  | PCLD            
+                 |                           |
+            CMD1 |  3                    18  | FLGCK           
+                 |                           |
+            CMD2 |  4                    17  | ACCLD           
+                 |                           |
+            CMD3 |  5                    16  | REGWR           
+                 |                           |
+             RST |  6                    15  | ADDSLD          
+                 |                           |
+          STATUS |  7                    14  |                 
+                 |                           |
+              CF |  8                    13  | OUTLD           
+                 |                           |
+              ZF |  9                    12  | CC              
+                 |                           |
+             GND | 10                    11  |                 
+                 |                           |
+                 |                           |
+                 `---------------------------'
+
+                SIGNATURE: N/A
+
+
+                                                                      Page 3
+ABEL 4.00  -  Device Utilization Chart         Sun Aug 20 01:50:34 19<3
+
+
+
+                ==== P16V8S Resource Allocations ====
+
+
+        Device        | Resource  |   Design    |    Part     |  
+       Resources      | Available | Requirement | Utilization | Unused
+======================|===========|=============|=============|==============
+                      |           |             |             |
+Dedicated input pins  |     10    |       8     |     8       |     2 ( 20 %)
+Combinatorial inputs  |     10    |       8     |     8       |     2 ( 20 %)
+Registered inputs     |      -    |       0     |     -       |     -
+                      |           |             |             |
+Dedicated output pins |      2    |       7     |     2       |     0 (  0 %)
+Bidirectional pins    |      6    |       0     |     5       |     1 ( 16 %)
+Combinatorial outputs |      8    |       7     |     7       |     1 ( 12 %)
+Registered outputs    |      -    |       0     |     -       |     -
+Two-input XOR         |      -    |       0     |     -       |     -
+                      |           |             |             |
+Buried nodes          |      -    |       0     |     -       |     -
+Buried registers      |      -    |       0     |     -       |     -
+Buried combinatorials |      -    |       0     |     -       |     -
+
+
+
+                                                                      Page 4
+ABEL 4.00  -  Device Utilization Chart         Sun Aug 20 01:50:34 19<3
+
+
+
+                ==== P16V8S Product Terms Distribution ====
+
+
+            Signal             |    Pin   | Terms | Terms | Terms
+             Name              | Assigned | Used  |  Max  | Unused
+===============================|==========|=======|=======|=======
+PCLD                           |   19     |   3   |   8   |   5
+FLGCK                          |   18     |   2   |   8   |   6
+ACCLD                          |   17     |   3   |   8   |   5
+REGWR                          |   16     |   1   |   8   |   7
+ADDSLD                         |   15     |   1   |   8   |   7
+OUTLD                          |   13     |   1   |   8   |   7
+CC                             |   12     |   2   |   8   |   6
+
+
+     ==== List of Inputs/Feedbacks ====
+
+Signal Name                    | Pin      | Pin Type
+============================== |==========|=========
+MCLK                           |    1     | INPUT
+CMD0                           |    2     | INPUT
+CMD1                           |    3     | INPUT
+CMD2                           |    4     | INPUT
+CMD3                           |    5     | INPUT
+STATUS                         |    7     | INPUT
+CF                             |    8     | INPUT
+ZF                             |    9     | INPUT
+
+
+
+                                                                      Page 5
+ABEL 4.00  -  Device Utilization Chart         Sun Aug 20 01:50:34 19<3
+
+
+
+    ==== P16V8S Unused Resources ====
+
+
+ Pin   |  Pin   |   Product   | Flip-flop
+Number |  Type  |   Terms     |   Type
+=======|========|=============|==========
+    6  |  INPUT |      -      |    -   
+   11  |  INPUT |      -      |    -   
+   14  |  BIDIR | NORMAL  8   |    -   
+
+
+
+                                                                      Page 6
+ABEL 4.00  -  Device Utilization Chart         Sun Aug 20 01:50:34 19<3
+
+
+
+    ==== I/O Files ====
+
+
+Module: 'minimax'
+
+
+Input files
+===========
+ABEL PLA file: MINIMAX.tt2
+Vector file: minimax.tmv
+Device library: P16V8S.dev
+
+Output files
+============
+Report file: MINIMAX.doc
+Programmer load file: ds00.jed

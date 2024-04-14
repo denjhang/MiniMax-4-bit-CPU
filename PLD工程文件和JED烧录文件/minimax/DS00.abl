@@ -1,0 +1,30 @@
+MODULE MINIMAX
+
+ ds00 device 'P16V8S';
+
+ MCLK,CMD0,CMD1,CMD2,CMD3,RST,STATUS,CF,ZF pin 1,2,3,4,5,6,7,8,9;
+ PCLD,FLGCK,ACCLD,REGWR,ADDSLD, OUTLD,CC pin 19,18,17,16,15, 13,12;
+
+	CMD = [CMD3,CMD2,CMD1,CMD0];
+	
+ X,Z = .X.,.Z.;
+
+EQUATIONS
+	
+	!PCLD   =  (STATUS == 0)& 
+		   ((CMD == 15)#
+		   ((CMD == 12)& ZF)#
+		   ((CMD == 13)& CF)#
+		   ((CMD == 14)& !CF));
+	
+	!FLGCK   =  (!MCLK) & (STATUS == 0)&((CMD == 1)#(CMD == 2)#(CMD == 3));
+	
+	!ACCLD  =  (STATUS == 0)&((CMD == 2)#(CMD == 3)#(CMD == 4)#(CMD == 6)#(CMD == 8));
+	!REGWR  =  (STATUS == 0)&(CMD == 5)& !MCLK;
+	!ADDSLD =  (STATUS == 0)&(CMD == 9);
+	OUTLD   =  (STATUS == 0)&(CMD == 7) & !MCLK ;
+	
+	CC      =  (CMD == 1) # ((CMD == 2)& CF) # ((CMD == 3)& CF);
+
+END
+ÿ

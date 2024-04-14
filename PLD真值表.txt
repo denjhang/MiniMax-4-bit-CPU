@@ -1,0 +1,23 @@
+指令码	助记符		PCLD	FLGCK	ACCLD	REGLD	ADDSLD	OUTLD	CC
+
+0	NOP		1	0	1	1	1	0	0
+1	CMP		1	!clk	1	1	1	0	1	
+2	ADD		1	!clk	0	1	1	0	CF	
+3	SUB		1	!clk	0	1	1	0	CF	
+
+4	MOV A reg	1	0	0	1	1	0	0		
+5	MOV reg A	1	0	1	clk	1	0	0		
+6	IN A		1	0	0	1	1	0	0	
+7	OUT A		1	0	1	1	1	1	0	
+
+8	MVI A		1	0	0	1	1	0	0	
+9	MVI ADRS	1	0	1	1	0	0	0	
+A	NAN		1	0	1	1	1	0	0	
+B	NAN		1	0	1	1	1	0	0	
+
+C	JMPZ		!z==1	0	1	1	1	0	0	
+D	JMPC		!c==1	0	1	1	1	0	0	
+E	JMPNC		!c==0	0	1	1	1	0	0	
+F	JMP		0	0	1	1	1	0	0	
+
+(input: ZF CF RST CMD3 CMD2 CMD1 CMD0 CLK 
